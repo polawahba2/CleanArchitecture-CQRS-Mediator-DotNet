@@ -2,8 +2,8 @@
 
 **A production-ready .NET template implementing Clean Architecture with CQRS and MediatR pattern**
 
-[![.NET 9](https://img.shields.io/badge/.NET-8-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
-[![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-%23512BD4?logo=asp.net)](https://learn.microsoft.com/aspnet/core)
+[![.NET 9](https://img.shields.io/badge/.NET-9-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
+[![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-9.0-%23512BD4?logo=asp.net)](https://learn.microsoft.com/aspnet/core)
 [![CQRS](https://img.shields.io/badge/Pattern-CQRS-2CA5E0)](https://learn.microsoft.com/azure/architecture/patterns/cqrs)
 
 
