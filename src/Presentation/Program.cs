@@ -34,11 +34,14 @@ internal class Program
         {
             var services = scope.ServiceProvider;
             var context = services.GetRequiredService<ApplicationDBContext>();
+            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+
 
             try
             {
                 await context.Database.MigrateAsync();
+                await ApplicationDBContextSeed.SeedRolesAsync(roleManager);
                 await ApplicationDBContextSeed.SeedUserAsync(userManager);
             }
             catch (Exception ex)
