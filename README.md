@@ -36,7 +36,7 @@ This template follows Clean Architecture principles with clear layer separation:
 
 ## Getting Started
 ### Prerequisites
-- .NET 8 SDK
+- .NET 9 SDK
 
 ### Installation 🚀
 ```bash
