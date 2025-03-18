@@ -18,9 +18,10 @@ namespace Domain.Entities
         public decimal TotalAmount { get; set; }
 
         [Required]
-        public string UserId { get; set; } =string.Empty;
+        public string UserId { get; set; } = string.Empty;
 
-        [Required]
-        public List<OrderItem> OrderItems { get; set; } = new();
+        public ICollection<OrderItems> ProductOrders { get; set; } =null!;
+
+
     }
 }

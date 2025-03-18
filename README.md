@@ -34,6 +34,32 @@ This template follows Clean Architecture principles with clear layer separation:
 - AutoMapper 
 - SQL Server
 
+
+## Solution Structure
+The solution follows Clean Architecture principles with 4 core layers:
+
+| Layer             | Responsibility                          | Key Components                         |
+|----------------   |-----------------------------------------|----------------------------------------|
+| **Domain**        | Business models & contracts             | Entities, Interfaces, Domain Events    |
+| **Application**   | Use cases & business logic              | CQRS, DTOs, Validation, Mapping        |
+| **Infrastructure**| Implementation details                  | Database, Auth, External Services      |
+| **Presentation**  | API entry point                         | Controllers, Middleware, Configuration |
+
+
+**Folder Structure**:
+```text
+CleanArchitectureWithCORS/
+├── src/
+│   ├── Application/          # Business logic & CQRS
+│   ├── Domain/               # Core domain models
+│   ├── Infrastructure/       # Persistence & services
+│   └── Presentation/         # API endpoints
+├── tests/                    # Unit & integration tests
+├── .gitignore
+└── README.md
+
+
+
 ## Getting Started
 ### Prerequisites
 - .NET 9 SDK

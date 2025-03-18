@@ -1,9 +1,12 @@
 using Application.Common.Interfaces;
+using Application.Features.Products.Commands;
+using Domain.Interfaces;
 using Infrastructure;
 using Infrastructure.Authentication;
 using Infrastructure.Authentication.services;
 using Infrastructure.Configurations;
 using Infrastructure.Identity;
+using Infrastructure.Repositories;
 using Infrastructure.Seed;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -23,9 +26,16 @@ internal class Program
         builder.Services.AddAutoMapper(typeof(IdentityProfile));
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddScoped<IProductRepository, ProductRepository>();
+        // builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+
         // builder.Services.AddMediatR(
         //     config => config.RegisterServicesFromAssembly(typeof(Program).Assembly)
         // );
+
+        builder.Services.AddMediatR(
+            config => config.RegisterServicesFromAssembly(typeof(CreateProductCommandHandler).Assembly)
+        );
 
 
         var app = builder.Build();

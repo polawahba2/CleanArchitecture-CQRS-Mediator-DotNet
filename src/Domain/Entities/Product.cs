@@ -7,12 +7,13 @@ namespace Domain.Entities
 {
     public class Product
     {
-        
+
         public Guid Id { get; set; }
 
         [Required]
         [StringLength(100)]
         public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18,2)")]
@@ -20,5 +21,7 @@ namespace Domain.Entities
 
         [Range(0, int.MaxValue)]
         public int StockQuantity { get; set; }
+        public ICollection<OrderItems> ProductOrders { get; set; } = null!;
+
     }
 }
